@@ -7,7 +7,6 @@ body {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  overflow:vertical;
 }
 
 .container {
@@ -19,6 +18,9 @@ body {
 
 .header {
   width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .header__options {
@@ -253,8 +255,12 @@ body {
           transform: scale(0);
 }
 
-.header__header.active {
-  height: 260px;
+.menu__nav.nav.active {
+  height: 145px;
+}
+
+.header .menu .nav__item.active {
+  font-size: 22px;
 }
 
 .ibg {
@@ -287,12 +293,13 @@ body {
 }
 
 @media (max-width: 800px) {
-  .header__header {
+  .menu__nav {
+    background-color: #2F343A;
     width: 100%;
     position: fixed;
   }
   .menu__nav.nav {
-    position: absolute;
+    position: fixed;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -300,16 +307,22 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    top: 0;
+    top: 137px;
     left: 0;
-    padding-top: 110px;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    height: 0px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    padding-top: 5px;
   }
   .header .menu .nav__item {
     margin: 0 0 20px 15px;
-    font-size: 22px;
+    font-size: 0px;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
   }
 }
 
@@ -323,5 +336,8 @@ body {
   .header .menu__office {
     font-size: 12px;
     line-height: 14px;
+  }
+  .menu__nav.nav {
+    top: 128px;
   }
 }
