@@ -258,7 +258,7 @@ body {
 @media (max-width:320px) 
 {
   .header__header.active{
-    height: 40%;
+    height: 90%;
   }
 }
 
