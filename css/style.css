@@ -7,6 +7,7 @@ body {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
+  overflow:vertical;
 }
 
 .container {
