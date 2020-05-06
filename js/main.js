@@ -11,8 +11,10 @@ function ibg () {
 ibg()
 
 document.querySelector('.menu__burger').addEventListener('click', function(){
-  document.querySelector('.header__header').classList.toggle('active');  
+  document.querySelector('.menu__nav.nav').classList.toggle('active');  
   document.querySelectorAll('.burger__line').forEach(el => el.classList.toggle('active'));  
+  document.querySelectorAll('.nav__item').forEach(el => el.classList.toggle('active'));  
+  
 });
 
 // $('.menu__burger').click(function(event){
