@@ -1,7 +1,13 @@
 * {
   box-sizing: border-box;
+  transition: all 0.3s;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+ 
+}
 
 .greeting {
 
@@ -131,12 +137,17 @@ footer {
       flex: 1;
     }
 
+    &__office:hover{
+      color: rgb(200, 163, 95);
+    }
+
     &__office {
+      transition: all 0.3s;
       padding-left: 35px;
       background: url("../img/office.svg") no-repeat center left;
       flex-direction: column;
       justify-content: center;
-
+      cursor: pointer;
     }
 
     &__right {
@@ -177,6 +188,11 @@ footer {
     font-size: 12px;
     line-height: 14px;
     color: #FFFFFF;
+    transition: all 0.3s;
+  }
+  &__phone:hover,
+  &__mail:hover {
+    color: #483F37;
   }
 
 }
@@ -191,6 +207,11 @@ footer {
   &_nonactive {
     opacity: 0.5;
   }
+}
+
+.lang {
+  cursor: pointer;
+
 }
 
 .burger {
@@ -232,6 +253,18 @@ footer {
 
   top: 102px;
   overflow: auto;
+}
+
+.header .menu .nav__item {
+  font-size: 14px;
+  color: white;
+  transition: all 0.3s;
+}
+
+.header .menu .nav__item:hover {
+
+  color: #C8A35F;
+
 }
 
 .header .menu .nav__item.active {
@@ -571,6 +604,16 @@ footer {
     outline: none;
     border: 0;
     width: 220px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  &__button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 9px 22px -1px rgba(0,0,0,0.59);
+  }
+  &__button:active {
+    transform: scale(0.9);
   }
 
   &__pic {
@@ -593,11 +636,14 @@ footer {
     text-transform: uppercase;
     color: #C8A35F;
   }
+  
 
   &__right {
     display: flex;
     flex-direction: row;
     align-items: center;
+    cursor: pointer;
+
   }
 
   &__right::after {
@@ -612,7 +658,16 @@ footer {
     display: flex;
     flex-direction: row;
     align-items: center;
+    cursor: pointer;
   }
+  
+  &__right:hover {
+    transform: translateX(10px);
+  }
+  &__left:hover{
+    transform: translateX(-10px);
+  }
+  
 
   &__left::before {
     content: '';
@@ -669,8 +724,52 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    cursor: pointer;
   }
 
+  .item {
+    position: relative;
+    
+    &__pic {
+      text-align: center;
+      z-index: 3;
+      position: relative;
+    }
+  
+    &__caption {
+      text-align: center;
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      z-index: 5;
+    }
+  
+  
+    &__hover {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      visibility: hidden;
+      background: url("../img/airplane.svg") no-repeat left 50% top calc(50% - 20px),
+        url("../img/circle.svg") no-repeat left 50% top calc(50% - 20px);
+      background-color: #C8A35F;
+      z-index: 4;
+      
+    }
+  
+    &:hover {
+      .item__hover {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  
+  }
 
 }
 
@@ -704,48 +803,7 @@ footer {
   }
 }
 
-.item {
-  position: relative;
 
-  &__pic {
-    text-align: center;
-    z-index: 3;
-    position: relative;
-  }
-
-  &__caption {
-    text-align: center;
-    font-size: 18px;
-    line-height: 22px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    z-index: 5;
-  }
-
-
-  &__hover {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    visibility: hidden;
-    background: url("../img/airplane.svg") no-repeat left 50% top calc(50% - 20px),
-      url("../img/circle.svg") no-repeat left 50% top calc(50% - 20px);
-    background-color: #C8A35F;
-    z-index: 4;
-  }
-
-  &:hover {
-    .item__hover {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
-
-}
 
 
 
@@ -799,59 +857,61 @@ footer {
     flex: 0 0 59%;
     flex-wrap: wrap;
   }
-}
 
-.item {
+  .item {
+    
 
-
-  &__text {
-    width: 200px;
-    height: 160px;
-    background: #FFFFFF;
-    border: 0.25px solid #C8A35F;
-    padding: 12px 4px 12px;
-  }
-
-  &__number {
-    font-size: 64px;
-    line-height: 75px;
-    text-align: center;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: #2F343A;
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
-
-  &__caption {
-    font-size: 18px;
-    line-height: 21px;
-    text-align: center;
-    letter-spacing: 0.05em;
-    color: #000000;
-    margin-bottom: 15px;
-
-  }
-
-  &__subcaption {
-    font-size: 12px;
-    line-height: 14px;
-    text-align: center;
-    color: #000000;
-  }
-
-  &__picture {
-    object-fit: contain;
-    width: 200px;
-    height: 160px;
-    border: 0.25px solid #C8A35F;
-
-    img {
-      width: 100%;
-      height: 100%;
+    &__text {
+      width: 200px;
+      height: 160px;
+      background: #FFFFFF;
+      border: 0.25px solid #C8A35F;
+      padding: 12px 4px 12px;
+    }
+  
+    &__number {
+      font-size: 64px;
+      line-height: 75px;
+      text-align: center;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #2F343A;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+  
+    &__caption {
+      font-size: 18px;
+      line-height: 21px;
+      text-align: center;
+      letter-spacing: 0.05em;
+      color: #000000;
+      margin-bottom: 15px;
+    }
+  
+    &__subcaption {
+      font-size: 12px;
+      line-height: 14px;
+      text-align: center;
+      color: #000000;
+    }
+  
+    &__picture {
+      object-fit: contain;
+      width: 200px;
+      height: 160px;
+      border: 0.25px solid #C8A35F;
+      
+  
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 }
+
+
 
 .map {
   height: 570px;
@@ -888,6 +948,9 @@ footer {
     margin-right: 19.18%;
   }
 
+  &__develop:hover{
+    color: rgb(205, 211, 218);
+  }
   &__develop {
     text-align: right;
     text-decoration-line: underline;
@@ -928,6 +991,9 @@ footer {
 
   }
 
+  &__email:hover {
+    color: rgb(223, 219, 219);
+  }
   &__email {
     color: #2F343A;
   }
@@ -938,6 +1004,9 @@ footer {
     justify-content: space-between;
   }
 
+  &__phone:hover{
+    color: #2F343A;
+  }
   &__phone {
     color: #F2F2F2;
     width: max-content;
@@ -1007,6 +1076,7 @@ footer {
       height: 10%;
 
     }
+    
 
     &__block {
       display: flex;
