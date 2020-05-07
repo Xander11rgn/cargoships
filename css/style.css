@@ -1106,7 +1106,7 @@ footer {
         -ms-flex-pack: justify;
             justify-content: space-between;
     margin-right: 0;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
   }
   .footer__develop {
     text-align: center;
