@@ -1090,6 +1090,7 @@ footer {
         -ms-flex-align: center;
             align-items: center;
     margin-bottom: 5px;
+    position: relative;
   }
   .contact__left {
     display: -webkit-box;
@@ -1106,7 +1107,7 @@ footer {
         -ms-flex-pack: justify;
             justify-content: space-between;
     margin-right: 0;
-    margin-bottom: 150px;
+    margin-bottom: 5px;
   }
   .footer__develop {
     text-align: center;
