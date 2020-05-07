@@ -1,6 +1,6 @@
 new WOW().init();
 
-function ibg () {
+function ibg() {
   const ibg = document.querySelectorAll('.ibg')
   for (var i = 0; i < ibg.length; i++) {
     if (ibg[i].querySelector('img')) {
@@ -10,44 +10,105 @@ function ibg () {
 }
 ibg()
 
-document.querySelector('.menu__burger').addEventListener('click', function(){
-  document.querySelector('.menu__nav.nav').classList.toggle('active');  
-  document.querySelectorAll('.burger__line').forEach(el => el.classList.toggle('active'));  
-  document.querySelectorAll('.nav__item').forEach(el => el.classList.toggle('active'));  
-  
+document.querySelector('.menu__burger').addEventListener('click', function () {
+  document.querySelector('.menu__nav.nav').classList.toggle('active');
+  document.querySelectorAll('.burger__line').forEach(el => el.classList.toggle('active'));
+  document.querySelectorAll('.nav__item').forEach(el => el.classList.toggle('active'));
+  document.querySelector('body').classList.toggle('lock');
+
 });
+
+
+let langs = document.querySelectorAll('.lang');
+langs.forEach(el => el.addEventListener('click', function () {
+  for (i = 0; i < langs.length; i++) {
+    if (!langs[i].classList.contains('langs_nonactive')) {
+      langs[i].classList.add('langs_nonactive');
+    }
+  }
+
+
+  if (el.classList.contains('langs_nonactive')) {
+    el.classList.remove('langs_nonactive');
+  }
+}));
+
+
+
+var bounceUp = anime({
+  autoplay: false,
+  targets: '.anim-office',
+  translateY: {
+    value: ['10px', '-20px'],
+    duration: 505,
+    // easing: 'easeOutQuad',
+  },
+  complete: function () {
+    bounceDown.restart()
+  },
+});
+
+var bounceDown = anime({
+  autoplay: false,
+  targets: '.anim-office',
+  translateY: {
+    value: ['0px', '20px'],
+    duration: 150,
+    // easing: 'easeInQuad',
+  },
+  complete: function () {
+    bounceUp.restart()
+  },
+});
+
+
+
+
+
+// function select(){
+//   document.querySelectorAll('.panel__item').forEach(el => el.addEventListener('mouseover', function(){
+//     console.log(el.querySelector('.item__hover.item__hoverpic'));
+
+//     el.querySelector('.item__hover.item__hoverpic').classList.toggle('selected');
+//   }));
+//   document.querySelectorAll('.panel__item').forEach(el => el.addEventListener('mouseout', function(){
+//     el.querySelector('.item__hover.item__hoverpic').classList.toggle('unselected');
+//   }));
+// }
+// select();
 
 // $('.menu__burger').click(function(event){
 
 // });
- 
+
 
 // $(document).ready(function () {
-//   $('.first-screen-slider').slick({
+//   $('.services__slider').slick({
 //     infinite: true,
-//     slidesToShow: 2,
+//     slidesToShow: 1,
 //     slidesToScroll: 1,
-//     variableWidth: true,
+//     // variableWidth: true,
 //     adaptiveHeight: true,
 //     arrows: true,
-//     autoplay: true,
+//     // autoplay: true,
 //     autoplaySpeed: 5000,
 //     dots: false,
 //     touchThreshold: 50,
-//     // waitForAnimate: false,
-//     // focusOnSelect: true,
+//     waitForAnimate: false,
 //     centerMode: true,
-//     initialSlide: 1,
+//     // initialSlide: 1,
+//     // fade: true,
+//     speed: 800,
 //     appendArrows: $('.slider-controls'),
-//     prevArrow: '<div class="left-control"></div>',
-//     nextArrow: '<div class="right-control"></div>',
-//     asNavFor: '.line-control',
-//     responsive: [
-//       {
-//         breakpoint: 500,
-//         settings: {
-//           slidesToShow: 1
-//         }
+//     prevArrow: '<div class="slider__left">назад</div>',
+//     nextArrow: '<div class="slider__right">след</div>',
+//     // asNavFor: '.line-control',
+//     // responsive: [
+//     //   {
+//     //     breakpoint: 500,
+//     //     settings: {
+//     //       slidesToShow: 1
+//     //     }
 //       // },
 //       // {
 //       //   breakpoint: 480,
@@ -57,10 +118,10 @@ document.querySelector('.menu__burger').addEventListener('click', function(){
 //       //     centerPadding: '40px',
 //       //     slidesToShow: 1
 //       //   }
-//       }
-//     ]
+//       // }
+//     // ]
 //   });
-
+// });
 //   $('.line-control').slick({ // настройка навигации
 //     asNavFor: '.first-screen-slider',
 //     focusOnSelect: true,
