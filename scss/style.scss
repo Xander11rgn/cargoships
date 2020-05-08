@@ -731,6 +731,7 @@ z-index: 25;
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
+    user-select: none;
   }
 
   .item {
