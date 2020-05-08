@@ -91,10 +91,12 @@ footer {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   height: 100px;
+  z-index: 25;
 }
 
 .header__menu {
   height: 46px;
+  z-index: 25;
 }
 
 .header .menu {
@@ -111,6 +113,7 @@ footer {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  z-index: 25;
 }
 
 .header .menu__left {
@@ -125,6 +128,8 @@ footer {
       -ms-flex-align: center;
           align-items: center;
   height: 100%;
+  background: #2F343A;
+  z-index: 25;
 }
 
 .header .menu__logo {
@@ -307,6 +312,7 @@ footer {
 .menu__nav.nav.active {
   top: 102px;
   overflow: auto;
+  z-index: 2;
 }
 
 .header .menu .nav__item {
