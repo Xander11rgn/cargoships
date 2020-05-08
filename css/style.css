@@ -792,6 +792,10 @@ footer {
       -ms-flex-pack: justify;
           justify-content: space-between;
   cursor: pointer;
+    -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .panel .item {
