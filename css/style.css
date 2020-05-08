@@ -131,6 +131,7 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  z-index: 25;
 }
 
 .header .menu__logo::after {
@@ -162,6 +163,7 @@ footer {
 }
 
 .header .menu__office {
+  z-index: 25;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   padding-left: 35px;
@@ -254,6 +256,7 @@ footer {
 }
 
 .burger {
+  z-index: 25;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
